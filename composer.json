@@ -1,6 +1,8 @@
 {
     "name": "datasift/feature",
     "description": "Library tool for managing feature flags",
+    "homepage": "https://github.com/datasift/php-lib-feature",
+    "license": "MIT",
     "authors": [
         {
             "name": "Nathan Macnamara",
@@ -28,5 +30,10 @@
     },
     "scripts": {
         "test": "phpspec"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
     }
 }
