@@ -18,5 +18,4 @@ before_script:
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
 
 script:
-  - vendor/bin/phpspec run --config=phpspec.yml.dist --no-interaction
-
+  - phpunit --coverage-text --coverage-clover=coverage.clover
