@@ -1,0 +1,15 @@
+suites:
+    default:
+        namespace: DataSift\Feature
+        psr4_prefix: DataSift\Feature
+
+extensions:
+    - PhpSpec\Extension\CodeCoverageExtension
+
+code_coverage:
+  format:
+    - html
+    - clover
+  output:
+    html: build/coverage
+    clover: build/coverage.xml
