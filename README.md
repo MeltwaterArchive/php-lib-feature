@@ -5,3 +5,4 @@ Drivers
 
 - Array
 - File
+- Consul
