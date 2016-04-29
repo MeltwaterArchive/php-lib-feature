@@ -6,8 +6,53 @@ Feature Flags
 [![Build Status](https://img.shields.io/travis/datasift/php-lib-feature/master.svg?style=flat-square)](https://travis-ci.org/datasift/php-lib-feature)
 [![Total Downloads](https://img.shields.io/packagist/dt/datasift/feature.svg?style=flat-square)](https://packagist.org/packages/datasift/feature)
 
-Drivers
+Simple PHP Library to manager feature flags
 
-- Array
-- File
-- Consul
+Installation
+------------
+
+Begin by installing this package through Composer. Edit your project's `composer.json` file to require `datasift/feature`.
+
+	"require": {
+		"datasift/feature": "3.*"
+	}
+
+Next, update Composer from the Terminal:
+
+    composer update
+
+
+Drivers
+-------
+
+- Array - Simple array of key value pairs.
+- File - JSON file containing key value pairs.
+- Consul - Using consul key value store.
+
+Usage
+-----
+
+TBA
+
+Testing
+-------
+
+To test the library itself, run the tests:
+
+    composer test
+    
+Contributing
+------------
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+Credits
+-------
+
+- [nathanmac](https://github.com/nathanmac)
+- [All Contributors](../../contributors)
+
+License
+-------
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
