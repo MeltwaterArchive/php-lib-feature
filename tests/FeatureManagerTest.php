@@ -59,12 +59,13 @@ class FeatureManagerTest extends PHPUnit_Framework_TestCase
     {
         $driver = m::mock('\DataSift\Feature\Driver\Services\DriverInterface');
         $driver->shouldReceive('get')
-            ->once()
+            ->twice()
             ->withAnyArgs(array("value", false))
             ->andReturn($value);
 
         $featureManager = new FeatureManager($driver);
 
         $this->assertFalse($featureManager->isEnabled('value'));
+        $this->assertTrue($featureManager->isNotEnabled('value'));
     }
 }
