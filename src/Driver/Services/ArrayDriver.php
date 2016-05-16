@@ -12,16 +12,6 @@ class ArrayDriver extends BaseDriver implements DriverInterface
     protected $data;
 
     /**
-     * Array Driver constructor.
-     *
-     * @param array $options
-     */
-    public function __construct(array $options)
-    {
-        parent::__construct($options);
-    }
-
-    /**
      * NoOp
      *
      * @param OptionsResolver $resolver

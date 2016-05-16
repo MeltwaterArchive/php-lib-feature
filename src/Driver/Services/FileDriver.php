@@ -12,16 +12,6 @@ class FileDriver extends BaseDriver implements DriverInterface
     protected $data;
 
     /**
-     * FileDriver constructor.
-     *
-     * @param array $options
-     */
-    public function __construct(array $options)
-    {
-        parent::__construct($options);
-    }
-
-    /**
      * Setup the ConsulDriver
      *
      * @param OptionsResolver $resolver
