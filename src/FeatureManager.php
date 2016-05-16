@@ -2,6 +2,7 @@
 
 namespace DataSift\Feature;
 
+use DataSift\Feature\Driver\DriverManager;
 use DataSift\Feature\Driver\Services\DriverInterface;
 
 /**
@@ -19,11 +20,11 @@ class FeatureManager
     /**
      * FeatureManager constructor.
      *
-     * @param DriverInterface $driver
+     * @param array $config
      */
-    public function __construct(DriverInterface $driver)
+    public function __construct(array $config)
     {
-        $this->driver = $driver;
+        $this->driver = DriverManager::loadDriver($config);
     }
 
     /**

@@ -14,13 +14,11 @@ class ArrayDriver extends BaseDriver implements DriverInterface
     /**
      * Array Driver constructor.
      *
-     * @param array $data
+     * @param array $options
      */
-    public function __construct(array $data)
+    public function __construct(array $options)
     {
-        if (is_array($data)) {
-            $this->data = $data;
-        }
+        parent::__construct($options);
     }
 
     /**
@@ -30,7 +28,7 @@ class ArrayDriver extends BaseDriver implements DriverInterface
      */
     protected function setupDriver(OptionsResolver $resolver)
     {
-        // NoOp
+        $resolver->setRequired('data');
     }
 
     /**
@@ -40,7 +38,7 @@ class ArrayDriver extends BaseDriver implements DriverInterface
      */
     public function getData()
     {
-        return $this->data;
+        return $this->options['data'];
     }
 
     /**
