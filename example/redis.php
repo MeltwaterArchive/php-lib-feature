@@ -4,11 +4,9 @@ use DataSift\Feature\FeatureManager;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$data = json_decode(file_get_contents(__DIR__ . '/data/test.json'), true);
-
 $feature = new FeatureManager([
-    'driver' => 'array',
-    'data' => $data
+    'driver' => 'redis',
+    'host' => '192.168.10.10'
 ]);
 
 $key = isset($argv[1]) ? $argv[1] : 'test';

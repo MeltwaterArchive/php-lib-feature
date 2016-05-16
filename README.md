@@ -28,6 +28,7 @@ Drivers
 - Array - Simple array of key value pairs.
 - File - JSON file containing key value pairs.
 - Consul - Using consul key value store.
+- Redis - Using redis key value store.
 
 Usage
 -----

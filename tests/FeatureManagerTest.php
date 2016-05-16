@@ -18,21 +18,27 @@ class FeatureManagerTest extends PHPUnit_Framework_TestCase
     /** @test */
     public function it_is_initializable()
     {
-        $driver = m::mock('\DataSift\Feature\Driver\Services\DriverInterface');
-        $featureManager = new FeatureManager($driver);
+        $featureManager = new FeatureManager(array(
+            'driver' => 'array',
+            'data' => array(
+                'test' => true
+            )
+        ));
         $this->assertInstanceOf('DataSift\Feature\FeatureManager', $featureManager);
     }
 
     /** @test */
     public function it_should_call_is_enabled()
     {
-        $driver = m::mock('\DataSift\Feature\Driver\Services\DriverInterface');
-        $driver->shouldReceive('get')
-            ->once()
-            ->withAnyArgs(array("value", false));
+        $featureManager = new FeatureManager(array(
+            'driver' => 'array',
+            'data' => array(
+                'test' => true
+            )
+        ));
 
-        $featureManager = new FeatureManager($driver);
-        $featureManager->isEnabled("value");
+        $this->assertTrue($featureManager->isEnabled("test"));
+        $this->assertFalse($featureManager->isEnabled("something"));
     }
 
     /**
@@ -57,13 +63,12 @@ class FeatureManagerTest extends PHPUnit_Framework_TestCase
      */
     public function it_should_handle_falsey_values($value)
     {
-        $driver = m::mock('\DataSift\Feature\Driver\Services\DriverInterface');
-        $driver->shouldReceive('get')
-            ->twice()
-            ->withAnyArgs(array("value", false))
-            ->andReturn($value);
-
-        $featureManager = new FeatureManager($driver);
+        $featureManager = new FeatureManager(array(
+            'driver' => 'array',
+            'data' => array(
+                'value' => $value
+            )
+        ));
 
         $this->assertFalse($featureManager->isEnabled('value'));
         $this->assertTrue($featureManager->isNotEnabled('value'));
