@@ -20,11 +20,15 @@ class FeatureManager
     /**
      * FeatureManager constructor.
      *
-     * @param array $config
+     * @param array|DriverInterface $driverConfig
      */
-    public function __construct(array $config)
+    public function __construct($driverConfig)
     {
-        $this->driver = DriverManager::loadDriver($config);
+        if ($driverConfig instanceof DriverInterface) {
+            $this->driver = $driverConfig;
+        } else {
+            $this->driver = DriverManager::loadDriver($driverConfig);
+        }
     }
 
     /**
