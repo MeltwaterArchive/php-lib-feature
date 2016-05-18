@@ -33,14 +33,14 @@ Drivers
 Usage
 -----
 
-```
+```php
 $feature = new FeatureManager([
     'driver' => 'file',
     'file' => '<path to json file>'
 ]);
 ```
 
-```
+```php
 $feature = new FeatureManager([
     'driver' => 'array',
     'data' => [
@@ -50,7 +50,7 @@ $feature = new FeatureManager([
 ]);
 ```
 
-```
+```php
 $feature = new FeatureManager([
     'driver' => 'consul',
     'host' => '127.0.0.1',
